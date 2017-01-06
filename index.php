@@ -9,22 +9,30 @@
 		<script src="main.js"></script>
 	</head>
 	<body>
-		<div id="txt">
-			<h1>Infinite Scroll XKCD</h1>
+		<div id="header">
+			<h1><span class="link" onclick="window.location.href='./#1309';window.location.reload();">Infinite Scroll</span> XKCD</h1>
 			All comics are from <a href="http://xkcd.com">xkcd.com</a>, by Randall Munroe.<br><br>
-			Jump to comic #:
-			<select onchange="window.location.href='./#'+this.value;window.location.reload();" id="jump">
-				<?php
-				$upto = json_decode(file_get_contents("http://xkcd.com/info.0.json"),true)["num"];
-				for ($i=1;$i<=$upto;$i++) {
-					echo "<option>".$i."</option>";
-				}
-				?>
-			</select>&emsp;<button onclick="window.location.href='./#<?=$upto?>';window.location.reload();">Current</button><br><br>
 		</div>
-		<div id="loading"></div>
-		<div id="loadingMsg">
-			<i class="mdi mdi-timer-sand"></i>
+		<div id="txt"></div>
+		<div class="fab" onclick="prevTen()" id="back"><i class="mdi mdi-arrow-left"></i></div>
+		<div class="fab" onclick="modalShow('1')"><i class="mdi mdi-dots-vertical"></i></div>
+		<div id="overlay"></div>
+		<div id="modal"><i class="mdi mdi-timer-sand"></i></div>
+		<div id="modal1">
+			<strong>Jump</strong><br><br>
+			<small>
+				Select Comic:
+				<select id="jump">
+					<?php
+					$upto = json_decode(file_get_contents("http://xkcd.com/info.0.json"),true)["num"];
+					echo "<option value=\"".$upto."\">Latest</option>";
+					for ($i=1;$i<=$upto;$i++) {
+						echo "<option>".$i."</option>";
+					}
+					?>
+				</select><br><br>
+				<button onclick="window.location.href='./#'+$('jump').value;window.location.reload();">OK</button><button onclick="modalHide()">CANCEL</button>
+			</small>
 		</div>
 	</body>
 </html>
