@@ -1,10 +1,10 @@
 body {
 	font-family:open sans;
 }
-#txt {
+#txt, #header {
 	text-align:center;
 }
-#loading {
+#overlay {
 	position:fixed;
 	left:0;
 	top:0;
@@ -13,18 +13,58 @@ body {
 	background-color:#000000;
 	opacity:0.2;
 }
-#loadingMsg {
+#modal, #modal1 {
 	position:fixed;
 	left:50%;
 	top:50%;
-	width:200px;
+	padding:10px;
+	min-width:200px;
 	background-color:#ffffff;
 	transform:translate(-50%,-50%);
-	text-align:center;
-	font-size:4rem;
 	box-shadow:0 2px 10px #555555;
+}
+#modal {
+	font-size:4em;
+	text-align:center;
+}
+#modal1 {
+	display:none;
+}
+#modal1 button {
+	float:right;
+	background-color:transparent;
+	border-style:none;
+	outline:none;
+	font-family:open sans;
+	font-size:1em;
+	color:#607D8B;
+	cursor:pointer;
 }
 .comic {
 	width:100%;
 	box-shadow:0 2px 10px #555555;
+}
+a, .link {
+	color:#607D8B;
+	cursor:pointer;
+	text-decoration:underline;
+}
+.fab {
+	width:50px;
+	height:50px;
+	position:fixed;
+	right:10px;
+	cursor:pointer;
+	bottom:10px;
+	border-radius:50%;
+	background-color:#607D8B;
+	box-shadow:0 2px 10px #555555;
+	color:#ffffff;
+	font-size:2em;
+	text-align:center;
+	line-height:50px;
+	transition:transform 0.5s;
+}
+#back {
+	bottom:70px;
 }
