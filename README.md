@@ -2,7 +2,9 @@
 
 Infinite Scroll XKCD is a small webapp that I made to improve the experience of reading Randall Munroe's webcomic, XKCD.
 
-Rather than having to read the comic, hover over it to read the mouse-over text, and then click next to view the next one, this webapp shows mouse-over text on the page, and to read the next one, just scroll down - when you hit the bottom the next 10 comics just load underneith.
+Rather than having to read the comic, hover over it to read the mouse-over text, and then click next to view the next one, this webapp shows mouse-over text on the page, and to read the next one, just scroll down - when you hit the bottom the next 10 comics just load underneath.
+
+I was inspired to make this after reading reddit - https://www.reddit.com/r/xkcd/comments/5jkaor/ive_been_reading_all_xkcd_comics_from_1_im_on_352/
 
 # How This Works
 
